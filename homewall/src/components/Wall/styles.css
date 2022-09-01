@@ -1,0 +1,45 @@
+.homewall-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.wall-center {
+    display: flex;
+    justify-content: center;
+}
+
+.wall {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    border: 1px solid white;
+    border-radius: 3px;
+    min-width: 400px;
+    width: 400px;
+    height: 600px;
+    flex-shrink: 0;
+    overflow: hidden;
+    resize: none;
+}
+
+.item {
+    display: flex;
+    resize: none;
+    width: 10%;
+    padding-bottom: 1%; 
+    margin-top: 2%; 
+    margin-bottom: 1%; 
+    position: relative;
+
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    flex: 1 0 auto;
+
+    cursor: pointer;
+    overflow: hidden;
+}
