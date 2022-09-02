@@ -16,6 +16,7 @@ React with Typescript, Vite, MongoDB, Express, Mongoose, Redux Toolkit.
 - ~~persist wall state in redux persist local storage~~
 - ~~create walls (set of saved individual walls) redux logic~~
 - ~~create walls UI to display wall choices~~
+- upodate walls model with name and id (so it can be deleted/edited)
 - update walls logic and UI to allow user to choose wall name
 - create route redux logic
 - hook up route redux logic to route UI on /walls
@@ -30,3 +31,7 @@ React with Typescript, Vite, MongoDB, Express, Mongoose, Redux Toolkit.
 - refactor Wall component to separate the messy functional logic from the UI 
 - refactor local CSS into more global variable styles in index.css: padding, colors, margins, etc. 
 - migrate to React Native
+
+## State Structure
+- Redux persist store provides state to app
+- wallSlice, wallsSlice, and routesSlice create reducers that get exported to components and receive actions and their payloads from the components (Walls, Wall, and Routes) that call them
