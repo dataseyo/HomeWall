@@ -18,3 +18,7 @@ React with Typescript, Vite, MongoDB, Express, Mongoose, Redux Toolkit.
 - allow users to change wall color and background
 - refactor Wall component to separate the messy functional logic from the UI 
 - refactor local CSS into more global variable styles in index.css: padding, colors, margins, etc. 
+
+
+[![homewall gif](https://gifs.com/gif/homewall-8309Rm)](https://gifs.com/gif/homewall-8309Rm)
+
