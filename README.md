@@ -21,5 +21,5 @@ React with Typescript, Vite, MongoDB, Express, Mongoose, Redux Toolkit.
 
 
 
-![Alt Text]([https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif](https://j.gifs.com/8309Rm.gif))
+![Alt Text]((https://j.gifs.com/8309Rm.gif))
 
