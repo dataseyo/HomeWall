@@ -19,7 +19,7 @@ React with Typescript, Vite, MongoDB, Express, Mongoose, Redux Toolkit.
 - refactor Wall component to separate the messy functional logic from the UI 
 - refactor local CSS into more global variable styles in index.css: padding, colors, margins, etc. 
 
+<a href="url"><img src="https://j.gifs.com/8309Rm.gif" align="left" height="100" width="80" ></a>
 
 
-![Alt Text](https://j.gifs.com/8309Rm.gif width="250" height="250")
 
