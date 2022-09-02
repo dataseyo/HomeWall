@@ -20,5 +20,6 @@ React with Typescript, Vite, MongoDB, Express, Mongoose, Redux Toolkit.
 - refactor local CSS into more global variable styles in index.css: padding, colors, margins, etc. 
 
 
-[![homewall gif](https://gifs.com/gif/homewall-8309Rm)](https://gifs.com/gif/homewall-8309Rm)
+
+![Alt Text]([https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif](https://j.gifs.com/8309Rm.gif))
 
