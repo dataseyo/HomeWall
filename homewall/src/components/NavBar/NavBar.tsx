@@ -17,16 +17,15 @@ const Header = (props: Props) => {
       expand="sm" 
       collapseOnSelect
     >
-     
         <Navbar.Brand className="p-2">
-          <Logo/>
+          <a href="/">          <Logo/></a>
         </Navbar.Brand>
 
         <Navbar.Toggle className='m-2'/>
         <Navbar.Collapse className="navbar-nav">
           <Nav className='p-2'>
             <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="#walls">Walls</Nav.Link>
+            <Nav.Link href="/walls">Walls</Nav.Link>
             <Nav.Link href="#routes">Routes</Nav.Link>
             <Nav.Link href="/sends">Sends</Nav.Link>
           </Nav>

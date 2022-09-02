@@ -7,7 +7,7 @@ type Props = {}
 const Sends = (props: Props) => {
   return (
     <div className='container-fluid'>
-      Sends
+      <h2>Sends</h2>
     </div>
   )
 }

@@ -1,4 +1,4 @@
-import React, {MouseEventHandler} from 'react'
+import React, { MouseEventHandler, useState } from 'react'
 import Dialog from '@mui/material/Dialog';
 
 import './styles.css'
@@ -6,10 +6,21 @@ import './styles.css'
 type Props = {
     open: boolean;
     setOpen: React.Dispatch<React.SetStateAction<boolean>>;
-    chooseHold: MouseEventHandler
+    chooseHold: MouseEventHandler,
+    reduxChooseHold: MouseEventHandler
 }
 
-const HoldModal = ({open, setOpen, chooseHold}: Props) => {
+const renderHoldSelection = (holdCategory: string) => {
+    // show grid of crimps/jugs/etc. depending on which category is selected in modal
+
+    switch(holdCategory) {
+
+    }
+}
+
+const HoldModal = ({open, setOpen, chooseHold, reduxChooseHold}: Props) => {
+    const [holdTypeSelected, setHoldTypeSelected] = useState(false)
+
   return (
     <Dialog 
         onClose={() => setOpen(false)} 
@@ -29,7 +40,7 @@ const HoldModal = ({open, setOpen, chooseHold}: Props) => {
                 <div
                     id="crimp"
                     className="btn btn-outline-dark p-2 m-1"
-                    onClick={(event) => chooseHold(event)}
+                    onClick={(event) => reduxChooseHold(event)}
                 >
                     <p>Crimp</p>
 
@@ -38,7 +49,7 @@ const HoldModal = ({open, setOpen, chooseHold}: Props) => {
                 <div
                     id="jug"
                     className="btn btn-outline-dark p-2 m-1"
-                    onClick={(event) => chooseHold(event)}
+                    onClick={(event) => reduxChooseHold(event)}
                 >
                     <p>Jug</p>
 
@@ -47,7 +58,7 @@ const HoldModal = ({open, setOpen, chooseHold}: Props) => {
                 <div
                     id="sloper"
                     className="btn btn-outline-dark p-2 m-1"
-                    onClick={(event) => chooseHold(event)}
+                    onClick={(event) => reduxChooseHold(event)}
                 >
                     <p>Sloper</p>
 
@@ -56,7 +67,7 @@ const HoldModal = ({open, setOpen, chooseHold}: Props) => {
                 <div
                     id="foot"
                     className="btn btn-outline-dark p-2 m-1"
-                    onClick={(event) => chooseHold(event)}
+                    onClick={(event) => reduxChooseHold(event)}
                 >
                     <p>Foot</p>
 
@@ -65,7 +76,7 @@ const HoldModal = ({open, setOpen, chooseHold}: Props) => {
                 <div
                     id="."
                     className="btn btn-outline-dark p-2 m-1"
-                    onClick={(event) => chooseHold(event)}
+                    onClick={(event) => reduxChooseHold(event)}
                 >
                     <p>None</p>
 

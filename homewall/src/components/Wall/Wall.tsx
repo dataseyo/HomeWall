@@ -1,4 +1,6 @@
 import React, { useState, MouseEventHandler } from 'react'
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { useSelector, useDispatch } from 'react-redux'
 
 import './styles.css'
 import HoldModal from './hold-modal/HoldModal'
@@ -8,21 +10,39 @@ import Sloper from './holds/Sloper'
 import Footchip from './holds/Footchip'
 import Footchip2 from './holds/Footchip2'
 
+// redux store and actions
+import store, { selectWall, changeWall, resetWall } from '../../store/store'
+
 const holds = [
 
 ]
 
 type Props = {}
 
-const Wall = (props: Props) => {
-    // array of objects used to render the wall
-    const gridObj = new Array(100).fill(1).map((value, index) => {
+// type of single grid site on wall
+interface Hold {
+    hold: string;
+    id: number;
+}
+
+// type of single wall
+interface Wall {
+    wall: Hold[]
+}
+
+// array of objects used to render the wall
+const gridObj = new Array(100).fill(1).map((value, index) => {
         return {
             "hold" : ".",
             "id": index
         }
-    })
+})
 
+const Wall = (props: Props) => {
+    // redux 
+    const reduxWall = useSelector(selectWall)
+    const dispatch = useDispatch()
+   
     // wall state
     const [wall, setWall] = useState(gridObj)
 
@@ -31,6 +51,20 @@ const Wall = (props: Props) => {
 
     // selected hold state
     const [selectedHold, setSelectedHold] = useState(-1)
+
+    // redux version of chooseHold
+    const reduxChooseHold = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+        var holdType = event.currentTarget.getAttribute("id")!
+
+        dispatch(changeWall({hold: holdType, id: selectedHold}))
+
+        setOpen(false)
+    }
+
+    // redux version of reset
+    const reduxResetWall = () => {
+        dispatch(resetWall())
+    }
 
     // function is passed to child HoldModal after ChangeHold function is called
     // function takes user input from HoldModal buttons and populates the wall node 
@@ -65,16 +99,16 @@ const Wall = (props: Props) => {
     }
 
     // reset wall
-    const resetWall = () => {
-        var reset = wall.map(site => {
-            if (site.hold != ".") {
-                site.hold = "."
-            }
-            return site
-        })
+    // const resetWall = () => {
+    //     var reset = wall.map(site => {
+    //         if (site.hold != ".") {
+    //             site.hold = "."
+    //         }
+    //         return site
+    //     })
 
-        setWall(reset)
-    }
+    //     setWall(reset)
+    // }
 
     // save wall
     const saveWall = () => {
@@ -104,7 +138,7 @@ const Wall = (props: Props) => {
             <div className="col">
                 <button 
                     className="btn btn-outline-danger"
-                    onClick={() => resetWall()}
+                    onClick={() => reduxResetWall()}
                 >
                 Reset
                 </button>
@@ -118,16 +152,13 @@ const Wall = (props: Props) => {
                     Save
                 </button>
             </div>
-            
-
-            
         </div>
         
 
         <div className="col wall-center"> 
              <div className="wall">
                 {/* nodes of wall */}
-                {wall.map((site, index) => {
+                {reduxWall.map((site, index) => {
                     return (
                         <div 
                             className="item" 
@@ -145,6 +176,7 @@ const Wall = (props: Props) => {
                     open={open} 
                     setOpen={setOpen}
                     chooseHold={chooseHold}
+                    reduxChooseHold={reduxChooseHold}
                 />
             </div>
         </div>

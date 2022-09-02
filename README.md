@@ -10,10 +10,12 @@ React with Typescript, Vite, MongoDB, Express, Mongoose, Redux Toolkit.
 
 <a href="url"><img src="https://j.gifs.com/8309Rm.gif" height="500" width="300" ></a>
 
-
 # Road Map
 
-- refactor useState logic into Redux reducers 
+- ~~refactor wall logic into Redux reducers~~
+- ~~persist wall state in redux persist local storage~~
+- create walls (set of saved individual walls) redux logic
+- create walls UI to display grid of miniature walls
 - connect to MongoDB
 - add save wall functionality 
 - add save route functionality
