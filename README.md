@@ -6,6 +6,11 @@ A climbing wall app where climbers can customize walls with holds, save walls, a
 
 React with Typescript, Vite, MongoDB, Express, Mongoose, Redux Toolkit. 
 
+# Current Progress
+
+<a href="url"><img src="https://j.gifs.com/8309Rm.gif" height="500" width="300" ></a>
+
+
 # Road Map
 
 - refactor useState logic into Redux reducers 
@@ -18,8 +23,4 @@ React with Typescript, Vite, MongoDB, Express, Mongoose, Redux Toolkit.
 - allow users to change wall color and background
 - refactor Wall component to separate the messy functional logic from the UI 
 - refactor local CSS into more global variable styles in index.css: padding, colors, margins, etc. 
-
-
-# Current Progress
-
-<a href="url"><img src="https://j.gifs.com/8309Rm.gif" height="500" width="300" ></a>
+- migrate to React Native
