@@ -14,8 +14,12 @@ React with Typescript, Vite, MongoDB, Express, Mongoose, Redux Toolkit.
 
 - ~~refactor wall logic into Redux reducers~~
 - ~~persist wall state in redux persist local storage~~
-- create walls (set of saved individual walls) redux logic
-- create walls UI to display grid of miniature walls
+- ~~create walls (set of saved individual walls) redux logic~~
+- ~~create walls UI to display wall choices~~
+- update walls logic and UI to allow user to choose wall name
+- create route redux logic
+- hook up route redux logic to route UI on /walls
+- routes tab should show routes available on current wall
 - connect to MongoDB
 - add save wall functionality 
 - add save route functionality

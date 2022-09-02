@@ -12,8 +12,8 @@ const Jug = (props: Props) => {
         <path d="M4 46C4 20.5949 27.9868 0 57.5761 0H109.424C139.013 0 163 20.5949 163 46C163 71.4051 139.013 92 109.424 92H57.5761C27.9868 92 4 71.4051 4 46Z" fill="#287B20"/>
         </g>
         <defs>
-        <filter id="filter0_d_1_4" x="0" y="0" width="167" height="100" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+        <filter id="filter0_d_1_4" x="0" y="0" width="167" height="100" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+        <feFlood floodOpacity="0" result="BackgroundImageFix"/>
         <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
         <feOffset dy="4"/>
         <feGaussianBlur stdDeviation="2"/>

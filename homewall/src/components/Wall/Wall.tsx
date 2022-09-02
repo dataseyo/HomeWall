@@ -11,7 +11,8 @@ import Footchip from './holds/Footchip'
 import Footchip2 from './holds/Footchip2'
 
 // redux store and actions
-import store, { selectWall, changeWall, resetWall } from '../../store/store'
+import { selectWall, changeWall, resetWall } from '../../store/wallSlice'
+import { saveWall } from '../../store/wallsSlice'
 
 const holds = [
 
@@ -111,9 +112,9 @@ const Wall = (props: Props) => {
     // }
 
     // save wall
-    const saveWall = () => {
+    const newWall = () => {
         // change it to open model letting you name saved wall
-
+        dispatch(saveWall(reduxWall))
     }
 
     // render the correct hold on the wall
@@ -147,7 +148,7 @@ const Wall = (props: Props) => {
             <div className="col">
                 <button 
                     className="btn btn-outline-success"
-                    onClick={() => saveWall()}
+                    onClick={() => newWall()}
                 >
                     Save
                 </button>

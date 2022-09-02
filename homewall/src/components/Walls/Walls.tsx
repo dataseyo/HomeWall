@@ -1,10 +1,16 @@
 import React from 'react'
+import Wall from '../../components/Wall/Wall'
 
 type Props = {}
 
 const Walls = (props: Props) => {
+
   return (
-    <div>Walls</div>
+    <div className="container">
+      
+      
+
+    </div>
   )
 }
 

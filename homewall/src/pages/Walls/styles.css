@@ -1,3 +1,11 @@
-.text-walls {
-    color: white;
+.wall-li {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.line {
+    border: 1px solid white;
 }
