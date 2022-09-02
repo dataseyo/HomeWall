@@ -1,7 +1,16 @@
 .hold-modal {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     padding: 4px;
     width: 200px;
 }
 
+.hold-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
 
+.holds-grid {
+
+}

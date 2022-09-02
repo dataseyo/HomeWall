@@ -18,16 +18,17 @@ const HoldModal = ({open, setOpen, chooseHold}: Props) => {
         <div className="hold-modal">
             <div className="col">
                 <h5>Choose Hold</h5>
+                <hr/>
             </div>
 
             {/* available hold svgs: 
                 on click, they should replace the wall nodes
                 with the chosen hold svg 
             */}
-            <div className="col">
+            <div className="col hold-buttons">
                 <div
                     id="crimp"
-                    className="btn btn-outline-dark"
+                    className="btn btn-outline-dark p-2 m-1"
                     onClick={(event) => chooseHold(event)}
                 >
                     <p>Crimp</p>
@@ -36,7 +37,7 @@ const HoldModal = ({open, setOpen, chooseHold}: Props) => {
 
                 <div
                     id="jug"
-                    className="btn btn-outline-dark"
+                    className="btn btn-outline-dark p-2 m-1"
                     onClick={(event) => chooseHold(event)}
                 >
                     <p>Jug</p>
@@ -45,7 +46,7 @@ const HoldModal = ({open, setOpen, chooseHold}: Props) => {
 
                 <div
                     id="sloper"
-                    className="btn btn-outline-dark"
+                    className="btn btn-outline-dark p-2 m-1"
                     onClick={(event) => chooseHold(event)}
                 >
                     <p>Sloper</p>
@@ -53,8 +54,17 @@ const HoldModal = ({open, setOpen, chooseHold}: Props) => {
                 </div>
 
                 <div
+                    id="foot"
+                    className="btn btn-outline-dark p-2 m-1"
+                    onClick={(event) => chooseHold(event)}
+                >
+                    <p>Foot</p>
+
+                </div>
+
+                <div
                     id="."
-                    className="btn btn-outline-dark"
+                    className="btn btn-outline-dark p-2 m-1"
                     onClick={(event) => chooseHold(event)}
                 >
                     <p>None</p>
@@ -64,7 +74,7 @@ const HoldModal = ({open, setOpen, chooseHold}: Props) => {
 
             </div>
 
-            <div className="col">
+            <div className="d-flex col justify-content-center">
                 <button 
                     className="btn btn-outline-danger"
                     onClick={() => setOpen(false)}

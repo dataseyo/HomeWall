@@ -1,9 +1,12 @@
 import React, { useState, MouseEventHandler } from 'react'
-import Crimp from './holds/Crimp'
-import Jug from './holds/Jug'
 
 import './styles.css'
 import HoldModal from './hold-modal/HoldModal'
+import Crimp from './holds/Crimp'
+import Jug from './holds/Jug'
+import Sloper from './holds/Sloper'
+import Footchip from './holds/Footchip'
+import Footchip2 from './holds/Footchip2'
 
 const holds = [
 
@@ -87,7 +90,9 @@ const Wall = (props: Props) => {
             case 'crimp': 
                 return <Crimp/>
             case 'sloper': 
-                return <p className='text-light'>sloper</p>
+                return <Sloper/>
+            case 'foot': 
+                return <Footchip2/>
             default: 
                 return <p className='text-light'>.</p>
         }

@@ -1,7 +1,20 @@
 .crimp {
-    transform: scale(.8);
+    height: 25px;
+    width: 30px;
 }
 
 .jug {
-    transform: scale(1);
+    height: 40px;
+    width: 35px;
+}
+
+.sloper {
+    height: 25px;
+    width: 25px;
+}
+
+.footchip {
+    height: 20px;
+    width: 20px;
+    scale: .5;
 }

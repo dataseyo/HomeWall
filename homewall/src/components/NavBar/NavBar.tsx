@@ -1,34 +1,37 @@
 import React from 'react'
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar'
+import { Nav, Navbar } from 'react-bootstrap'
+import Logo from '../../assets/logo'
 
-type Props = {}
+import './styles.css'
+
+type Props = {
+
+}
 
 const Header = (props: Props) => {
   return (
-    <div className='flex navbar navbar-dark bg-dark navbar-expand-lg'>
-      <div className="container-fluid d-flex">
-        <a href="/" className="navbar-brand"><h1>HomeWall</h1></a>
-        <ul className="navbar-nav me-auto mb-2 d-flex flex-row">
-          <li className="nav-item p-2">
-            <a className="nav-link" href="/">Home</a>
-          </li>
+    <Navbar
+      bg="dark" 
+      variant="dark"
+      sticky="top" 
+      expand="sm" 
+      collapseOnSelect
+    >
+     
+        <Navbar.Brand className="p-2">
+          <Logo/>
+        </Navbar.Brand>
 
-          <li className="nav-item p-2">
-            <a className="nav-link" href="#">Walls</a>
-          </li>
-
-          <li className="nav-item p-2">
-            <a className="nav-link" href="#">Routes</a>
-          </li>
-
-          <li className="nav-item p-2">
-            <a className="nav-link" href="/sends">Sends</a>
-          </li>
-        </ul>
-      </div>
-    </div>
+        <Navbar.Toggle className='m-2'/>
+        <Navbar.Collapse className="navbar-nav">
+          <Nav className='p-2'>
+            <Nav.Link href="/">Home</Nav.Link>
+            <Nav.Link href="#walls">Walls</Nav.Link>
+            <Nav.Link href="#routes">Routes</Nav.Link>
+            <Nav.Link href="/sends">Sends</Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
   )
 }
 

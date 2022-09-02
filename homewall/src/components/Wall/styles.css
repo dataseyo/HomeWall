@@ -16,10 +16,12 @@
     justify-content: center;
     align-items: center;
     width: 50%;
-    border: 1px solid white;
+    background: linear-gradient(to bottom, #C19A6B 0%, #B28B5C 80%);;
+    border: 1px solid linear-gradient(to bottom, #C19A6B 0%, #B28B5C 100%);
     border-radius: 3px;
-    min-width: 400px;
-    width: 400px;
+    min-width: 350px;
+    max-width: 350px;
+    width: 350;
     height: 600px;
     flex-shrink: 0;
     overflow: hidden;
@@ -42,4 +44,6 @@
 
     cursor: pointer;
     overflow: hidden;
+    min-width: 35px;
+    min-height: 43.5px;
 }
