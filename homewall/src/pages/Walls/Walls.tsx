@@ -1,13 +1,29 @@
 import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 
-import { selectWalls } from '../../store/wallsSlice'
+import { selectWalls, doSomething } from '../../store/wallsSlice'
 import { replaceWall } from '../../store/wallSlice'
 
 import './styles.css'
 import WallGrid from '../../components/Walls/Walls'
 
 type Props = {}
+
+// type of single grid site on wall
+interface Hold {
+    hold: string;
+    id: number;
+}
+
+// type of single wall
+interface Wall {
+    wall: Hold[]
+}
+
+// type of all walls
+interface Walls {
+    walls: Wall[]
+}
 
 // this should show a grid of walls that the user has created
 // instead, might have to show either
@@ -16,6 +32,7 @@ type Props = {}
 const Walls = (props: Props) => {
     const wallarray = useSelector(selectWalls)
     const dispatch = useDispatch()
+
     
     const [selectedWall, setSelectedWall] = useState([])
 
@@ -26,13 +43,20 @@ const Walls = (props: Props) => {
 
         dispatch(replaceWall(wallarray[index]))
     }
+
+    const deleteWall = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+        // this is broken
+        var index = parseInt(event.currentTarget.getAttribute("data-index")!)
+        
+        dispatch(doSomething(index))
+    }
    
   return (
     // <WallGrid/>
     <ul>
         {wallarray.map((item, index) => {
             return (
-                <div>
+                <div key={index}>
                     <li className="wall-li" key={index}>
                     <h5 className="text-light p-2">Wall {index}</h5>
                     
@@ -48,7 +72,15 @@ const Walls = (props: Props) => {
                         data-index={index}
                         onClick={(event) => useWall(event)}
                     >
-                        Use Wall
+                        Use
+                    </button>
+
+                    <button 
+                        className="btn btn-outline-danger m-2"
+                        data-index={index}
+                        onClick={(event) => deleteWall(event)}
+                    >
+                        Delete
                     </button>
 
                     {/* {item.map((wall, index) => {

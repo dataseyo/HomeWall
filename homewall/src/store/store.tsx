@@ -2,9 +2,12 @@ import { configureStore, createSlice, PayloadAction, combineReducers } from '@re
 import { persistReducer, persistStore } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import thunk from 'redux-thunk';
+import { useSelector, useDispatch } from 'react-redux'
+
 
 import { persistedWalls } from './wallsSlice';
 import { persistedWall } from './wallSlice'
+import { persistedRoute } from './routeSlice';
 
 const persistConfig = {
   key: 'root',
@@ -14,7 +17,8 @@ const persistConfig = {
 // store all reducers
 const rootReducer = combineReducers({
     persistedWall,
-    persistedWalls
+    persistedWalls,
+    persistedRoute
 })
 
 // export actions
@@ -37,3 +41,4 @@ export type RootState = ReturnType<typeof store.getState>
 // export redux store persistence and store
 export const persistor = persistStore(store)
 export default store;
+

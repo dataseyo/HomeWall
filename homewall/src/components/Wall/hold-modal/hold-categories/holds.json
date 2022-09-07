@@ -1,0 +1,49 @@
+{
+    "crimps" : [
+        {
+            "name" : "smol crimp",
+            "key": 0
+        },
+
+        {
+            "name" : "big crimp",
+            "key": 1
+        }
+    ],
+
+    "jugs" : [
+        {
+            "name" : "smol jug",
+            "key": 0
+        },
+
+        {
+            "name" : "big jug",
+            "key": 1
+        }
+    ],
+
+    "slopers" : [
+        {
+            "name" : "smol jug",
+            "key": 0
+        },
+
+        {
+            "name" : "big jug",
+            "key": 1
+        }
+    ],
+
+    "feet" : [
+        {
+            "name" : "smol",
+            "key": 0
+        },
+
+        {
+            "name" : "big",
+            "key": 1
+        }
+    ]
+}

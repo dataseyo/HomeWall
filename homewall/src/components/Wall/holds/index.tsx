@@ -1,11 +1,20 @@
-import React from 'react'
+// crimps
+import Crimp from "./crimps/Crimp"
+import Crimp2 from "./crimps/Crimp2"
+import Crimp3 from "./crimps/Crimp3"
 
-type Props = {}
+// jugs
+import Jug from "./jugs/Jug"
 
-const index = (props: Props) => {
-  return (
-    <div>index</div>
-  )
+// slopers
+import Sloper from "./slopers/Sloper"
+
+// feet
+import Footchip2 from "./feet/Footchip2"
+
+export {
+  Crimp, Crimp2, Crimp3,
+  Jug,
+  Sloper,
+  Footchip2
 }
-
-export default index

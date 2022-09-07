@@ -1,5 +1,8 @@
 import React from 'react'
 
+import '../styles.css'
+
+
 type Props = {}
 
 const Footchip2 = (props: Props) => {

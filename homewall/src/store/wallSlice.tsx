@@ -8,7 +8,7 @@ import { RootState } from './store';
 const persistConfig = {
     key: 'root',
     storage,
-  }
+}
   
   // type of single grid site on wall
   interface Hold {

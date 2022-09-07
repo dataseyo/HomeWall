@@ -1,14 +1,14 @@
-import React, { useState, MouseEventHandler } from 'react'
+import React, { useState, MouseEventHandler, useEffect } from 'react'
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { useSelector, useDispatch } from 'react-redux'
 
 import './styles.css'
 import HoldModal from './hold-modal/HoldModal'
-import Crimp from './holds/Crimp'
-import Jug from './holds/Jug'
-import Sloper from './holds/Sloper'
-import Footchip from './holds/Footchip'
-import Footchip2 from './holds/Footchip2'
+import { Crimp, Crimp2, Crimp3,
+        Jug, 
+        Sloper, 
+        Footchip2 
+    } from './holds/index'
 
 // redux store and actions
 import { selectWall, changeWall, resetWall } from '../../store/wallSlice'
@@ -41,11 +41,8 @@ const gridObj = new Array(100).fill(1).map((value, index) => {
 
 const Wall = (props: Props) => {
     // redux 
-    const reduxWall = useSelector(selectWall)
+    const reduxWall: Hold[] = useSelector(selectWall)
     const dispatch = useDispatch()
-   
-    // wall state
-    const [wall, setWall] = useState(gridObj)
 
     // modal state
     const [open, setOpen] = useState(false)
@@ -53,7 +50,9 @@ const Wall = (props: Props) => {
     // selected hold state
     const [selectedHold, setSelectedHold] = useState(-1)
 
-    // redux version of chooseHold
+    // function is passed to child HoldModal after ChangeHold function is called
+    // function takes user input from HoldModal buttons and populates the wall node 
+    // with their chosen hold type
     const reduxChooseHold = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
         var holdType = event.currentTarget.getAttribute("id")!
 
@@ -67,28 +66,6 @@ const Wall = (props: Props) => {
         dispatch(resetWall())
     }
 
-    // function is passed to child HoldModal after ChangeHold function is called
-    // function takes user input from HoldModal buttons and populates the wall node 
-    // with their chosen hold type
-    const chooseHold = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-        var holdType = event.currentTarget.getAttribute("id")!
-        // check hold type
-        console.log("chosen")
-        console.log(holdType)
-        
-        // update array
-        let update = wall.map(item => {
-            if (item.id === selectedHold) {
-                item.hold = holdType
-            } 
-            return item
-        })
-
-        setWall(update)
-
-        setOpen(false)
-    }
-
     // function opens the HoldModal and sets selectedHold state equal to which
     // node the user clicked on the wall
     const changeHold = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
@@ -98,18 +75,6 @@ const Wall = (props: Props) => {
 
         console.log(holdLocation)
     }
-
-    // reset wall
-    // const resetWall = () => {
-    //     var reset = wall.map(site => {
-    //         if (site.hold != ".") {
-    //             site.hold = "."
-    //         }
-    //         return site
-    //     })
-
-    //     setWall(reset)
-    // }
 
     // save wall
     const newWall = () => {
@@ -124,6 +89,10 @@ const Wall = (props: Props) => {
                 return <Jug/>
             case 'crimp': 
                 return <Crimp/>
+            case 'crimp2': 
+                return <Crimp2/>
+            case 'crimp3': 
+                return <Crimp3/>
             case 'sloper': 
                 return <Sloper/>
             case 'foot': 
@@ -166,6 +135,7 @@ const Wall = (props: Props) => {
                             onClick={(event) => changeHold(event)}
                             key={index}
                             data-index={index}
+                            // style={{transform: 'rotate(60deg)'}}
                         >
                             {renderHold(site.hold)}
                         </div>
@@ -176,7 +146,6 @@ const Wall = (props: Props) => {
                 <HoldModal 
                     open={open} 
                     setOpen={setOpen}
-                    chooseHold={chooseHold}
                     reduxChooseHold={reduxChooseHold}
                 />
             </div>

@@ -16,7 +16,7 @@ React with Typescript, Vite, MongoDB, Express, Mongoose, Redux Toolkit.
 - ~~persist wall state in redux persist local storage~~
 - ~~create walls (set of saved individual walls) redux logic~~
 - ~~create walls UI to display wall choices~~
-- upodate walls model with name and id (so it can be deleted/edited)
+- update walls model with name and id (so it can be deleted/edited)
 - update walls logic and UI to allow user to choose wall name
 - create route redux logic
 - hook up route redux logic to route UI on /walls
@@ -25,12 +25,16 @@ React with Typescript, Vite, MongoDB, Express, Mongoose, Redux Toolkit.
 - add save wall functionality 
 - add save route functionality
 - make more holds in figma
-- allow for rotation of holds
+- allow for rotation of holds (need to add degreeRotated property to Hold type, and use it as a prop on the div to transform: rotate(`${degreeRotated}`))
 - allow for users to vary the wall grid size (standard is 10 x 10)
 - allow users to change wall color and background
 - refactor Wall component to separate the messy functional logic from the UI 
 - refactor local CSS into more global variable styles in index.css: padding, colors, margins, etc. 
 - migrate to React Native
+
+# Issues
+
+- the way that I ended up rendering different holds inside the hold choice modal is probably an anti-pattern and not even close to automated. I was having trouble rendering references to them from a json file and typescript wasn't happy with that solution, so I was forced to do it manually for now. 
 
 ## State Structure
 - Redux persist store provides state to app

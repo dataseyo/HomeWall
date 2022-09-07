@@ -1,6 +1,6 @@
 import React from 'react'
 
-import './styles.css'
+import '../styles.css'
 
 type Props = {}
 
@@ -23,7 +23,10 @@ const Jug = (props: Props) => {
         <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1_4" result="shape"/>
         </filter>
         </defs>
+
     </svg>
+
+    
   )
 }
 
