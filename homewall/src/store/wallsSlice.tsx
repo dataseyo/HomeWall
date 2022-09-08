@@ -14,20 +14,35 @@ const persistConfig = {
 interface Hold {
     hold: string;
     id: number;
+    rotation: number;
 }
 
 // type of single wall
 interface Wall {
-    wall: Hold[]
+    wall: Hold[],
+    name: string
 }
 
 // type of all walls
 interface Walls {
-    walls: Hold[][]
+    walls: Wall[]
 }
 
+const gridObj = new Array(100).fill(1).map((value, index) => {
+    return {
+        "hold" : ".",
+        "id": index,
+        "rotation": 0
+    }
+})
+
 const initialState: Walls = {
-    walls: []
+    walls: [
+        {
+            wall: gridObj,
+            name: "initial state test"
+        }
+    ]
 }
 
 // set of all walls slice
@@ -35,11 +50,16 @@ export const wallsSlice = createSlice({
     name: 'walls',
     initialState,
     reducers: {
-        saveWall: (state, action: PayloadAction<{hold: string, id: number}[]>) => {
-            state.walls = [
-                ...state.walls,
-                action.payload
-            ]
+        // saveWall: (state, action: PayloadAction<{hold: string, id: number, rotation: number}[]>) => {
+        //     state.walls = [
+        //         ...state.walls,
+        //         action.payload
+        //     ]
+        // },
+        saveWall: (state, action: PayloadAction<Wall>) => {
+            state.walls = state.walls.concat(
+                {wall: action.payload.wall, name: action.payload.name}
+            )
         },
         doSomething: (state, action: PayloadAction<number>) => {
             // this is broken
@@ -47,11 +67,16 @@ export const wallsSlice = createSlice({
                 ...state.walls.slice(0, action.payload),
                 ...state.walls.slice(action.payload + 1)
             ]
+        },
+        saveWallTest: (state, action: PayloadAction<Wall>) => {
+            state.walls = state.walls.concat(
+                {wall: action.payload.wall, name: action.payload.name}
+            )
         }
     },
 })
 
-export const { saveWall, doSomething } = wallsSlice.actions
+export const { saveWall, doSomething, saveWallTest } = wallsSlice.actions
 
 export const persistedWalls = persistReducer(persistConfig, wallsSlice.reducer)
 export const selectWalls = (state: RootState) => state.persistedWalls.walls;

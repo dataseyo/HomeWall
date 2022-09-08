@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux'
 
 import './styles.css'
 import HoldModal from './hold-modal/HoldModal'
+import WallModal from './wall-modal/WallModal'
 import { Crimp, Crimp2, Crimp3,
         Jug, 
         Sloper, 
@@ -12,43 +13,34 @@ import { Crimp, Crimp2, Crimp3,
 
 // redux store and actions
 import { selectWall, changeWall, resetWall } from '../../store/wallSlice'
-import { saveWall } from '../../store/wallsSlice'
-
-const holds = [
-
-]
-
-type Props = {}
 
 // type of single grid site on wall
 interface Hold {
     hold: string;
     id: number;
+    rotation: number;
 }
 
 // type of single wall
 interface Wall {
-    wall: Hold[]
+    wall: Hold[],
+    name: string
 }
 
-// array of objects used to render the wall
-const gridObj = new Array(100).fill(1).map((value, index) => {
-        return {
-            "hold" : ".",
-            "id": index
-        }
-})
-
-const Wall = (props: Props) => {
+const Wall = () => {
     // redux 
-    const reduxWall: Hold[] = useSelector(selectWall)
+    const reduxWall = useSelector(selectWall)
     const dispatch = useDispatch()
 
     // modal state
     const [open, setOpen] = useState(false)
+    const [openSaveModal, setOpenSaveModal] = useState(false)
 
     // selected hold state
     const [selectedHold, setSelectedHold] = useState(-1)
+
+    // rotation state
+    const [rotation, setRotation] = useState<number>(0)
 
     // function is passed to child HoldModal after ChangeHold function is called
     // function takes user input from HoldModal buttons and populates the wall node 
@@ -56,7 +48,7 @@ const Wall = (props: Props) => {
     const reduxChooseHold = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
         var holdType = event.currentTarget.getAttribute("id")!
 
-        dispatch(changeWall({hold: holdType, id: selectedHold}))
+        dispatch(changeWall({hold: holdType, id: selectedHold, rotation: rotation}))
 
         setOpen(false)
     }
@@ -74,12 +66,6 @@ const Wall = (props: Props) => {
         setOpen(true)
 
         console.log(holdLocation)
-    }
-
-    // save wall
-    const newWall = () => {
-        // change it to open model letting you name saved wall
-        dispatch(saveWall(reduxWall))
     }
 
     // render the correct hold on the wall
@@ -117,7 +103,8 @@ const Wall = (props: Props) => {
             <div className="col">
                 <button 
                     className="btn btn-outline-success"
-                    onClick={() => newWall()}
+                    // onClick={() => newWall()}
+                    onClick={() => setOpenSaveModal(true)}
                 >
                     Save
                 </button>
@@ -135,7 +122,7 @@ const Wall = (props: Props) => {
                             onClick={(event) => changeHold(event)}
                             key={index}
                             data-index={index}
-                            // style={{transform: 'rotate(60deg)'}}
+                            style={{transform: `rotate(${site.rotation}deg)`}}
                         >
                             {renderHold(site.hold)}
                         </div>
@@ -147,6 +134,13 @@ const Wall = (props: Props) => {
                     open={open} 
                     setOpen={setOpen}
                     reduxChooseHold={reduxChooseHold}
+                    setRotation={setRotation}
+                    rotation={rotation}
+                />
+
+                <WallModal 
+                    open={openSaveModal}
+                    setOpen={setOpenSaveModal}
                 />
             </div>
         </div>

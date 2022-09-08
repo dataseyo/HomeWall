@@ -1,9 +1,28 @@
 .category-buttons {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+    margin: 0px;
+    padding: 0px;
 }
 
 .category-button {
     width: 50px;
     height: 50px;
+}
+
+.hold-category {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-input {
+    width: 60px;
+    margin-left: 10px;
+}
+
+.hold-category-rotation {
+    display: flex;
+    flex-direction: row;
 }

@@ -17,7 +17,8 @@ interface Hold {
 
 // type of single wall
 interface Wall {
-    wall: Hold[]
+    wall: Hold[],
+    name: string
 }
 
 // type of all walls
@@ -33,7 +34,6 @@ const Walls = (props: Props) => {
     const wallarray = useSelector(selectWalls)
     const dispatch = useDispatch()
 
-    
     const [selectedWall, setSelectedWall] = useState([])
 
     const useWall = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
@@ -58,7 +58,8 @@ const Walls = (props: Props) => {
             return (
                 <div key={index}>
                     <li className="wall-li" key={index}>
-                    <h5 className="text-light p-2">Wall {index}</h5>
+                    {/* <h5 className="text-light p-2">Wall {index}</h5> */}
+                    <h5 className="text-light p-2">{item.name}</h5>
                     
                     <button 
                         className="btn btn-outline-success m-2"
@@ -95,20 +96,6 @@ const Walls = (props: Props) => {
                 
             )
         })}
-
-        {/* {wallarray.map((item, index) => {
-                return (
-                    <div>
-                        {item.map((wall, index) => {
-                            return (
-                                <div className='text-light' key={index}>
-                                    {JSON.stringify(wall)}
-                                </div>
-                            )
-                        })}
-                    </div>
-                )
-        })} */}
     </ul>
   )
 }

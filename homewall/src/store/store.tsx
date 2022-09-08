@@ -2,8 +2,6 @@ import { configureStore, createSlice, PayloadAction, combineReducers } from '@re
 import { persistReducer, persistStore } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import thunk from 'redux-thunk';
-import { useSelector, useDispatch } from 'react-redux'
-
 
 import { persistedWalls } from './wallsSlice';
 import { persistedWall } from './wallSlice'

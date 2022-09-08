@@ -1,7 +1,6 @@
-import React, { MouseEventHandler, useState } from 'react'
+import React, { MouseEventHandler, useState, MouseEvent, Dispatch } from 'react'
 
 import './styles.css'
-import data from './holds.json'
 
 // hold imports
 import { Crimp, Crimp2, Crimp3 } from '../../holds/index'
@@ -40,6 +39,13 @@ const renderSlopers = [
     }
 ]
 
+const renderPinch = [
+    {
+        
+    }
+]
+
+
 const renderFeet = [
     {
         hold: <Footchip2/>,
@@ -49,10 +55,17 @@ const renderFeet = [
 
 type Props = {
     holdType: string,
-    reduxChooseHold: MouseEventHandler
+    reduxChooseHold: MouseEventHandler,
+    rotation: number,
+    setRotation: Dispatch<React.SetStateAction<number>>
 }
 
-const HoldCategory = ({holdType, reduxChooseHold}: Props) => {
+const HoldCategory = ({holdType, reduxChooseHold, rotation, setRotation}: Props) => {
+    const submitHold = (event: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>) => {
+        reduxChooseHold(event)
+        setRotation(0)
+    }
+
     const displayData = () => {
         switch(holdType) {
             case 'crimp': 
@@ -60,9 +73,10 @@ const HoldCategory = ({holdType, reduxChooseHold}: Props) => {
                     renderCrimps.map((item, index) => {
                         return (
                             <button
+                                key={index}
                                 id={item.id}
                                 className="category-button btn btn-outline-dark p-2 m-1"
-                                onClick={(event) => reduxChooseHold(event)}
+                                onClick={(event) => submitHold(event)}
                             >
                                 {item.hold}
                             </button>
@@ -74,9 +88,10 @@ const HoldCategory = ({holdType, reduxChooseHold}: Props) => {
                     renderJugs.map((item, index) => {
                         return (
                             <button
+                                key={index}
                                 id={item.id}
                                 className="category-button btn btn-outline-dark p-2 m-1"
-                                onClick={(event) => reduxChooseHold(event)}
+                                onClick={(event) => submitHold(event)}
                             >
                                 {item.hold}
                             </button>
@@ -88,9 +103,25 @@ const HoldCategory = ({holdType, reduxChooseHold}: Props) => {
                     renderSlopers.map((item, index) => {
                         return (
                             <button
+                                key={index}
                                 id={item.id}
                                 className="category-button btn btn-outline-dark p-2 m-1"
-                                onClick={(event) => reduxChooseHold(event)}
+                                onClick={(event) => submitHold(event)}
+                            >
+                                {item.hold}
+                            </button>
+                        )
+                    })
+                )
+            case 'pinch': 
+                return (
+                    renderFeet.map((item, index) => {
+                        return (
+                            <button
+                                key={index}
+                                id={item.id}
+                                className="category-button btn btn-outline-dark p-2 m-1"
+                                onClick={(event) => submitHold(event)}
                             >
                                 {item.hold}
                             </button>
@@ -102,9 +133,10 @@ const HoldCategory = ({holdType, reduxChooseHold}: Props) => {
                     renderFeet.map((item, index) => {
                         return (
                             <button
+                                key={index}
                                 id={item.id}
                                 className="category-button btn btn-outline-dark p-2 m-1"
-                                onClick={(event) => reduxChooseHold(event)}
+                                onClick={(event) => submitHold(event)}
                             >
                                 {item.hold}
                             </button>
@@ -129,7 +161,19 @@ const HoldCategory = ({holdType, reduxChooseHold}: Props) => {
     }
 
   return (
-    <div>
+    <div className='hold-category'>
+        <div className='hold-category-rotation'>
+            <label>Rotation:</label>
+            <input
+                type="number"
+                className='modal-input'
+                placeholder="0" 
+                value={rotation}
+                min={0} 
+                max={360} 
+                onChange={(event) => setRotation(parseInt(event.target.value))}
+            />
+        </div>
         {renderHolds()}
     </div>
   )

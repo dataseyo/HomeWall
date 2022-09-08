@@ -1,0 +1,23 @@
+.wall-modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 4px;
+    width: 200px;
+    min-width: 200px;
+    height: 300px;
+    min-height: 300px;
+}
+
+.wall-modal-options {
+    margin-top: 50px;
+    position: relative;
+    left: 50%;
+    bottom: 5%;
+    transform: translateX(-50%);
+}
+
+.wall-modal-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}

@@ -1,4 +1,4 @@
-import React, { MouseEventHandler, useState } from 'react'
+import React, { MouseEventHandler, useState, Dispatch } from 'react'
 import Dialog from '@mui/material/Dialog';
 
 import './styles.css'
@@ -7,10 +7,18 @@ import HoldCategory from './hold-categories/HoldCategory'
 type Props = {
     open: boolean;
     setOpen: React.Dispatch<React.SetStateAction<boolean>>;
-    reduxChooseHold: MouseEventHandler
+    reduxChooseHold: MouseEventHandler,
+    rotation: number,
+    setRotation: Dispatch<React.SetStateAction<number>>
 }
 
-const HoldModal = ({open, setOpen, reduxChooseHold}: Props) => {
+const HoldModal = ({
+    open, 
+    setOpen, 
+    reduxChooseHold, 
+    rotation, 
+    setRotation
+}: Props) => {
     // if hold type is selected, only render grid of holds within that type
     // conditionally removing choice of hold type
     const [holdTypeSelected, setHoldTypeSelected] = useState(false)
@@ -37,76 +45,87 @@ const HoldModal = ({open, setOpen, reduxChooseHold}: Props) => {
         open={open}
     >
         <div className="hold-modal">
-            <div className="col">
-                <h5>Choose Hold</h5>
-                <hr/>
+            <div className="modal-title-row">
+                <h5 className="holds-title">Choose Hold</h5>
             </div>
 
             {/* available hold svgs: 
                 on click, they should replace the wall nodes
                 with the chosen hold svg 
             */}
-            
-            { holdTypeSelected ? 
-                <div className="hold-buttons col">
-                    <HoldCategory 
-                        holdType={holdType}
-                        reduxChooseHold={reduxChooseHold}
-                    />
-                </div>
-                 : 
-                
-                <div className="col hold-buttons">
-                <div
-                    id="crimp"
-                    className="btn btn-outline-dark p-2 m-1"
-                    onClick={(event) => renderHoldSelection(event)}
-                >
-                    <p>Crimp</p>
+            <div className='holds-content-row'>
+                { holdTypeSelected ? 
+                    <div>
+                        <HoldCategory 
+                            holdType={holdType}
+                            reduxChooseHold={reduxChooseHold}
+                            rotation={rotation}
+                            setRotation={setRotation}
+                        />
+                    </div>
+                    : 
+                    
+                    <div className="hold-buttons">
+                    <div
+                        id="crimp"
+                        className="btn btn-outline-dark p-2 m-1"
+                        onClick={(event) => renderHoldSelection(event)}
+                    >
+                        <p>Crimp</p>
 
-                </div>
+                    </div>
 
-                <div
-                    id="jug"
-                    className="btn btn-outline-dark p-2 m-1"
-                    onClick={(event) => renderHoldSelection(event)}
-                >
-                    <p>Jug</p>
+                    <div
+                        id="jug"
+                        className="btn btn-outline-dark p-2 m-1"
+                        onClick={(event) => renderHoldSelection(event)}
+                    >
+                        <p>Jug</p>
 
-                </div>
+                    </div>
 
-                <div
-                    id="sloper"
-                    className="btn btn-outline-dark p-2 m-1"
-                    onClick={(event) => renderHoldSelection(event)}
-                >
-                    <p>Sloper</p>
+                    <div
+                        id="sloper"
+                        className="btn btn-outline-dark p-2 m-1"
+                        onClick={(event) => renderHoldSelection(event)}
+                    >
+                        <p>Sloper</p>
 
-                </div>
+                    </div>
 
-                <div
-                    id="foot"
-                    className="btn btn-outline-dark p-2 m-1"
-                    onClick={(event) => renderHoldSelection(event)}
-                >
-                    <p>Foot</p>
+                    <div
+                        id="pinch"
+                        className="btn btn-outline-dark p-2 m-1"
+                        onClick={(event) => renderHoldSelection(event)}
+                    >
+                        <p>Pinch</p>
 
-                </div>
+                    </div>
 
-                <div
-                    id="."
-                    className="btn btn-outline-dark p-2 m-1"
-                    onClick={(event) => reduxChooseHold(event)}
-                >
-                    <p>None</p>
+                    <div
+                        id="foot"
+                        className="btn btn-outline-dark p-2 m-1"
+                        onClick={(event) => renderHoldSelection(event)}
+                    >
+                        <p>Foot</p>
 
-                </div>
+                    </div>
+
+                    <div
+                        id="."
+                        className="btn btn-outline-dark p-2 m-1"
+                        onClick={(event) => reduxChooseHold(event)}
+                    >
+                        <p>None</p>
+
+                    </div>
 
 
-            </div>}
+                </div>}
+            </div>
 
-            <div className="holds-options-container m-10 bg-blue">
-                <div className="holds-options d-flex col justify-content-center f-1">
+            <div className="holds-options-container">
+                <div className="hold-options">
                     <button 
                         className="btn btn-outline-danger me-1 holds-button"
                         onClick={() => closeModal()}
