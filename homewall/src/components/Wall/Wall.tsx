@@ -7,7 +7,8 @@ import HoldModal from './hold-modal/HoldModal'
 import WallModal from './wall-modal/WallModal'
 import { Crimp, Crimp2, Crimp3,
         Jug, 
-        Sloper, 
+        Sloper,
+        Pinch1,
         Footchip2 
     } from './holds/index'
 
@@ -81,6 +82,8 @@ const Wall = () => {
                 return <Crimp3/>
             case 'sloper': 
                 return <Sloper/>
+            case 'pinch1': 
+                return <Pinch1/>
             case 'foot': 
                 return <Footchip2/>
             default: 

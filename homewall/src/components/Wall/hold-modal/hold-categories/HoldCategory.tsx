@@ -3,10 +3,13 @@ import React, { MouseEventHandler, useState, MouseEvent, Dispatch } from 'react'
 import './styles.css'
 
 // hold imports
-import { Crimp, Crimp2, Crimp3 } from '../../holds/index'
-import { Jug } from '../../holds/index'
-import { Sloper } from '../../holds/index'
-import { Footchip2 } from '../../holds/index'
+import {Crimp, Crimp2, Crimp3,
+        Jug,
+        Sloper,
+        Pinch1,
+        Footchip2
+} from '../../holds/index'
+
 
 const renderCrimps = [
     {
@@ -41,7 +44,8 @@ const renderSlopers = [
 
 const renderPinch = [
     {
-        
+        hold: <Pinch1/>,
+        id: "pinch1"
     }
 ]
 
@@ -115,12 +119,12 @@ const HoldCategory = ({holdType, reduxChooseHold, rotation, setRotation}: Props)
                 )
             case 'pinch': 
                 return (
-                    renderFeet.map((item, index) => {
+                    renderPinch.map((item, index) => {
                         return (
                             <button
                                 key={index}
                                 id={item.id}
-                                className="category-button btn btn-outline-dark p-2 m-1"
+                                className="category-button btn btn-outline-dark"
                                 onClick={(event) => submitHold(event)}
                             >
                                 {item.hold}

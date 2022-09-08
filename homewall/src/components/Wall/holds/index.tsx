@@ -9,6 +9,9 @@ import Jug from "./jugs/Jug"
 // slopers
 import Sloper from "./slopers/Sloper"
 
+// pinches
+import Pinch1 from "./pinches/Pinch1"
+
 // feet
 import Footchip2 from "./feet/Footchip2"
 
@@ -16,5 +19,6 @@ export {
   Crimp, Crimp2, Crimp3,
   Jug,
   Sloper,
+  Pinch1,
   Footchip2
 }
