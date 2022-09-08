@@ -8,7 +8,7 @@ React with Typescript, Vite, MongoDB, Express, Mongoose, Redux Toolkit.
 
 # Current Progress
 
-<a href="url"><img src="https://j.gifs.com/8309Rm.gif" height="500" width="300" ></a>
+<a href="url"><img src="https://im5.ezgif.com/tmp/ezgif-5-e0d5114b4d.gif" height="500" width="300" ></a>
 
 # Road Map
 
