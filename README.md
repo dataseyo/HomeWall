@@ -31,6 +31,8 @@ React with Typescript, Vite, MongoDB, Express, Mongoose, Redux Toolkit.
 - refactor Wall component to separate the messy functional logic from the UI 
 - refactor local CSS into more global variable styles in index.css: padding, colors, margins, etc. 
 - migrate to React Native
+- add hold maker feature
+- allow users to follow other users, and see/like/save their walls
 
 # Issues
 
