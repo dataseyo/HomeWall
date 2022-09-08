@@ -45,7 +45,7 @@ const WallModal = ({open, setOpen}: Props) => {
     >
         <div className='wall-modal'>
             <div>
-                <h5>Save Route as</h5>
+                <h5>Save Wall as</h5>
                 <form>
                     <label>Wall Name:</label>
                     <input 

@@ -15,9 +15,12 @@
     left: 50%;
     bottom: 5%;
     transform: translateX(-50%);
+    justify-content: center;
+    align-items: center;
 }
 
 .wall-modal-buttons {
+    padding: 4px;
     display: grid;
     grid-template-columns: 1fr 1fr;
 }

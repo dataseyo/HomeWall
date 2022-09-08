@@ -3,8 +3,8 @@ import React, { MouseEventHandler, useState, MouseEvent, Dispatch } from 'react'
 import './styles.css'
 
 // hold imports
-import {Crimp, Crimp2, Crimp3,
-        Jug,
+import {Crimp, Crimp2, Crimp3, Crimp4,
+        Jug, Jug2,
         Sloper,
         Pinch1,
         Footchip2
@@ -26,12 +26,22 @@ const renderCrimps = [
         hold: <Crimp3/>,
         id: "crimp3"
     },
+
+    {
+        hold: <Crimp4/>,
+        id: "crimp4"
+    },
 ]
 
 const renderJugs = [
     {
         hold: <Jug/>,
         id: "jug"
+    },
+
+    {
+        hold: <Jug2/>,
+        id: "jug2"
     }
 ]
 

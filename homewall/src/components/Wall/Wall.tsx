@@ -5,8 +5,8 @@ import { useSelector, useDispatch } from 'react-redux'
 import './styles.css'
 import HoldModal from './hold-modal/HoldModal'
 import WallModal from './wall-modal/WallModal'
-import { Crimp, Crimp2, Crimp3,
-        Jug, 
+import { Crimp, Crimp2, Crimp3, Crimp4,
+        Jug, Jug2,
         Sloper,
         Pinch1,
         Footchip2 
@@ -74,12 +74,16 @@ const Wall = () => {
         switch(holdType) {
             case 'jug': 
                 return <Jug/>
+            case 'jug2': 
+                return <Jug2/>
             case 'crimp': 
                 return <Crimp/>
             case 'crimp2': 
                 return <Crimp2/>
             case 'crimp3': 
                 return <Crimp3/>
+            case 'crimp4': 
+                return <Crimp4/>
             case 'sloper': 
                 return <Sloper/>
             case 'pinch1': 

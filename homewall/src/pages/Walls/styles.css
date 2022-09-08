@@ -9,3 +9,11 @@
 .line {
     border: 1px solid white;
 }
+
+.walls-button {
+
+}
+
+.walls-title {
+    flex: 1
+}

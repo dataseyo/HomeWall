@@ -59,38 +59,30 @@ const Walls = (props: Props) => {
                 <div key={index}>
                     <li className="wall-li" key={index}>
                     {/* <h5 className="text-light p-2">Wall {index}</h5> */}
-                    <h5 className="text-light p-2">{item.name}</h5>
-                    
-                    <button 
-                        className="btn btn-outline-success m-2"
-                        data-index={index}
-                    >
-                        Routes
-                    </button>
+                        <h5 className="walls-title text-light p-2">{item.name}</h5>
+                        
+                        <button 
+                            className="walls-button btn btn-outline-success m-2"
+                            data-index={index}
+                        >
+                            Routes
+                        </button>
 
-                    <button 
-                        className="btn btn-outline-primary m-2"
-                        data-index={index}
-                        onClick={(event) => useWall(event)}
-                    >
-                        Use
-                    </button>
+                        <button 
+                            className="walls-button btn btn-outline-primary m-2"
+                            data-index={index}
+                            onClick={(event) => useWall(event)}
+                        >
+                            Use
+                        </button>
 
-                    <button 
-                        className="btn btn-outline-danger m-2"
-                        data-index={index}
-                        onClick={(event) => deleteWall(event)}
-                    >
-                        Delete
-                    </button>
-
-                    {/* {item.map((wall, index) => {
-                        return (
-                            <div className='text-light' key={index}>
-                                Wall {index}
-                            </div>
-                        )
-                    })} */}
+                        <button 
+                            className="walls-button btn btn-outline-danger m-2"
+                            data-index={index}
+                            onClick={(event) => deleteWall(event)}
+                        >
+                            Delete
+                        </button>
                     </li>
                 </div>
                 

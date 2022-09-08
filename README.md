@@ -33,6 +33,7 @@ React with Typescript, Vite, MongoDB, Express, Mongoose, Redux Toolkit.
 - migrate to React Native
 - add hold maker feature
 - allow users to follow other users, and see/like/save their walls
+- allow for larger volume holds to be used that take up multiple grid sites
 
 # Issues
 
