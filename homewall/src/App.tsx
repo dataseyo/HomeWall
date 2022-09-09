@@ -9,7 +9,7 @@ import ClimbingRoutes from './pages/Routes/Routes'
 import Nav from './components/NavBar/NavBar'
 
 function App() {
-
+ //
   return (
     <div className='app bg-dark'>
       <Nav/>
