@@ -1,6 +1,4 @@
 import React from 'react'
-import HomeWall from '../../components/HomeWall/HomeWall'
-import Routes from '../../components/HomeWall/Routes/Routes'
 import Container from 'react-bootstrap/esm/Container'
 
 import './styles.css'

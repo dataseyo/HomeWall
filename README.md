@@ -4,7 +4,7 @@ A climbing wall app where climbers can customize walls with holds, save walls, a
 
 # Tech Stack
 
-React with Typescript, Vite, MongoDB, Express, Mongoose, Redux Toolkit. 
+React with Typescript, Node, MongoDB, Express, Mongoose, Redux Toolkit, Vite. 
 
 # Current Progress
 
@@ -33,7 +33,8 @@ React with Typescript, Vite, MongoDB, Express, Mongoose, Redux Toolkit.
 - migrate to React Native
 - add hold maker feature
 - allow users to follow other users, and see/like/save their walls
-- allow for larger volume holds to be used that take up multiple grid sites
+- allow for larger holds to be used that take up multiple grid sites
+- allow volumes to be placed on wall and for holds to be placed on volumes
 
 # Issues
 
