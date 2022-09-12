@@ -3,14 +3,25 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index",
+    "server": "nodemon index"
   },
   "keywords": [],
-  "author": "",
+  "author": "Zachary Shifrel",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.27.2",
+    "bcryptjs": "^2.4.3",
     "express": "^4.18.1",
-    "mongoose": "^6.5.5"
+    "express-validator": "^6.14.2",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.5.5",
+    "request": "^2.88.2"
+  },
+  "devDependencies": {
+    "concurrently": "^7.4.0",
+    "nodemon": "^2.0.19"
   }
 }

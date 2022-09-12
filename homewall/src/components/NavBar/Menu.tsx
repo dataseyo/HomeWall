@@ -17,6 +17,10 @@ const Menu = () => {
           <li className="nav-item p-2">
             <a className="nav-link" href="/sends">Sends</a>
           </li>
+
+          <li className="nav-item p-2">
+            <a className="nav-link" href="/profile">Profile</a>
+          </li>
         </ul>
         </div>
     )

@@ -28,6 +28,7 @@ const Header = (props: Props) => {
             <Nav.Link href="/walls">Walls</Nav.Link>
             <Nav.Link href="/routes">Routes</Nav.Link>
             <Nav.Link href="/sends">Sends</Nav.Link>
+            <Nav.Link href="/profile">Profile</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
