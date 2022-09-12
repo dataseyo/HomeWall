@@ -121,7 +121,10 @@ const Wall = () => {
 
         <div className="col wall-center"> 
              <div className="wall">
-                {/* nodes of wall */}
+                {/* Set Wall State 
+                    - shown when users are not actively setting a route
+                    - allows users to click on a node to change the hold
+                */}
                 {reduxWall.map((site, index) => {
                     return (
                         <div 
@@ -135,6 +138,12 @@ const Wall = () => {
                         </div>
                     )
                 })}
+
+                {/* Set Route State
+                    - shown when users decide to set a route on a saved wall
+                */}
+
+                {/* insert route setting logic here */}
 
                 {/* modal */}
                 <HoldModal 
