@@ -92,7 +92,9 @@ const HoldCategory = ({holdType, reduxChooseHold, rotation, setRotation}: Props)
                                 className="category-button btn btn-outline-dark p-2 m-1"
                                 onClick={(event) => submitHold(event)}
                             >
-                                {item.hold}
+                                <div style={{transform: `rotate(${rotation}deg)`}}>
+                                    {item.hold}
+                                </div>
                             </button>
                         )
                     })
@@ -107,7 +109,9 @@ const HoldCategory = ({holdType, reduxChooseHold, rotation, setRotation}: Props)
                                 className="category-button btn btn-outline-dark p-2 m-1"
                                 onClick={(event) => submitHold(event)}
                             >
-                                {item.hold}
+                                <div style={{transform: `rotate(${rotation}deg)`}}>
+                                    {item.hold}
+                                </div>
                             </button>
                         )
                     })
@@ -122,7 +126,9 @@ const HoldCategory = ({holdType, reduxChooseHold, rotation, setRotation}: Props)
                                 className="category-button btn btn-outline-dark p-2 m-1"
                                 onClick={(event) => submitHold(event)}
                             >
-                                {item.hold}
+                                <div style={{transform: `rotate(${rotation}deg)`}}>
+                                    {item.hold}
+                                </div>
                             </button>
                         )
                     })
@@ -137,7 +143,9 @@ const HoldCategory = ({holdType, reduxChooseHold, rotation, setRotation}: Props)
                                 className="category-button btn btn-outline-dark"
                                 onClick={(event) => submitHold(event)}
                             >
-                                {item.hold}
+                                <div style={{transform: `rotate(${rotation}deg)`}}>
+                                    {item.hold}
+                                </div>
                             </button>
                         )
                     })
@@ -152,7 +160,9 @@ const HoldCategory = ({holdType, reduxChooseHold, rotation, setRotation}: Props)
                                 className="category-button btn btn-outline-dark p-2 m-1"
                                 onClick={(event) => submitHold(event)}
                             >
-                                {item.hold}
+                                <div style={{transform: `rotate(${rotation}deg)`}}>
+                                    {item.hold}
+                                </div>
                             </button>
                         )
                     })
