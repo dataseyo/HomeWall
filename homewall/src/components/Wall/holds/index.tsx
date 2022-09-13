@@ -15,12 +15,14 @@ import Sloper from "./slopers/Sloper"
 import Pinch1 from "./pinches/Pinch1"
 
 // feet
+import FootChip1 from "./feet/FootChip1"
 import Footchip2 from "./feet/Footchip2"
+import FootChip3 from "./feet/FootChip3"
 
 export {
   Crimp, Crimp2, Crimp3, Crimp4,
   Jug, Jug2,
   Sloper,
   Pinch1,
-  Footchip2
+  FootChip1, Footchip2, FootChip3
 }

@@ -9,7 +9,7 @@ import { Crimp, Crimp2, Crimp3, Crimp4,
         Jug, Jug2,
         Sloper,
         Pinch1,
-        Footchip2 
+        FootChip1, Footchip2, FootChip3
     } from './holds/index'
 
 // redux store and actions
@@ -88,8 +88,12 @@ const Wall = () => {
                 return <Sloper/>
             case 'pinch1': 
                 return <Pinch1/>
-            case 'foot': 
+            case 'foot1': 
+                return <FootChip1/>
+            case 'foot2': 
                 return <Footchip2/>
+            case 'foot3': 
+                return <FootChip3/>
             default: 
                 return <p className='text-light'>.</p>
         }

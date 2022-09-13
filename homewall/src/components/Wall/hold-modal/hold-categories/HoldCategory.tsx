@@ -7,7 +7,7 @@ import {Crimp, Crimp2, Crimp3, Crimp4,
         Jug, Jug2,
         Sloper,
         Pinch1,
-        Footchip2
+        FootChip1, Footchip2, FootChip3
 } from '../../holds/index'
 
 
@@ -62,8 +62,18 @@ const renderPinch = [
 
 const renderFeet = [
     {
+        hold: <FootChip1/>,
+        id: "foot1"
+    },
+
+    {
         hold: <Footchip2/>,
-        id: "foot"
+        id: "foot2"
+    },
+
+    {
+        hold: <FootChip3/>,
+        id: "foot3"
     }
 ]
 

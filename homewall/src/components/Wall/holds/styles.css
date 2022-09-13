@@ -19,6 +19,12 @@
     scale: .5;
 }
 
+.footchip3 {
+    height: 20px;
+    width: 20px;
+    scale: .78;
+}
+
 .pinch {
     height: 40px;
     width: 40px;
